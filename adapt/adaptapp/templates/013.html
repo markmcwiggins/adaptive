@@ -1,0 +1,41 @@
+
+{% extends 'bridgehand.html' %}
+{% block 'body' %}
+<img src="/static/cards/10clubs.png">
+<img src="/static/cards/7clubs.png">
+<img src="/static/cards/6clubs.png">
+<img src="/static/cards/5clubs.png">
+<br>
+<img src="/static/cards/kdiamonds.png">
+<img src="/static/cards/jdiamonds.png">
+<img src="/static/cards/8diamonds.png">
+<img src="/static/cards/4diamonds.png">
+<br>
+<img src="/static/cards/acehearts.png">
+<img src="/static/cards/qhearts.png">
+<img src="/static/cards/2hearts.png">
+<br>
+<img src="/static/cards/7spades.png">
+<img src="/static/cards/3spades.png">
+<br>
+<br><br><h1>What is your opening bid with this hand?</h1><br><br>
+<form action="answer_proc/" method="POST">
+<input type="radio" value="1" name="amp">1</input>
+<input type="radio" value="2" name="amp">2</input>
+<input type="radio" value="3" name="amp">3</input>
+<input type="radio" value="4" name="amp">4</input>
+<input type="radio" value="5" name="amp">5</input>
+<input type="radio" value="6" name="amp">6</input>
+<input type="radio" value="7" name="amp">7</input>
+<br>
+<input type="radio" value="Spades" name="suit">Spades</input>
+<input type="radio" value="Hearts" name="suit">Hearts</input>
+<input type="radio" value="Diamonds" name="suit">Diamonds</input>
+<input type="radio" value="Clubs" name="suit">Clubs</input>
+<input type="radio" value="NT" name="suit">NT</input>
+<br>
+
+ {% csrf_token %}
+<input type="hidden" value="1,NT" name="ra"/>
+<input type="submit">
+{% endblock %}
